@@ -1,4 +1,4 @@
 import "./styles.css";
-import { getWeather } from "./modules/weatherData";
+import { getWeather } from "./modules/apiFunctions";
 
 getWeather("Orlando");
