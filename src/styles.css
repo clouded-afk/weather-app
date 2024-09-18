@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.weather-display-container {
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+  grid-template-rows: repeat(1fr, 5);
+}
+
+.location {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  border: 1px solid red;
+}
+
+.conditions {
+  grid-column: 1/3;
+  grid-row: 2/4;
+  border: 1px solid blue;
+}
+
+.temperature {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  border: 1px solid green;
+}
+
+.feels-like {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  border: 1px solid orange;
+}
+
+.description {
+  grid-column: 1/4;
+  grid-row: 4/5;
+  border: 1px solid red;
+}
+
+.sunrise {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  border: 1px solid purple;
+}
+.sunset {
+  grid-column: 2/3;
+  grid-row: 5/6;
+  border: 1px solid purple;
+}
+.humidity {
+  grid-column: 3/4;
+  grid-row: 5/6;
+  border: 1px solid purple;
+}
