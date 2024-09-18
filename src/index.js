@@ -1,4 +1,6 @@
 import "./styles.css";
-import { getWeather } from "./modules/apiFunctions";
+import { changeLocation } from "./modules/domManipulation";
 
-getWeather("Orlando");
+const searchButton = document.querySelector(".search-button");
+
+searchButton.addEventListener("click", changeLocation);
