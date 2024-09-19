@@ -70,6 +70,7 @@ function displayWeatherData(
   sunrise,
   sunset,
   humidity,
+  precipitation,
   icon,
 ) {
   const locationContainer = document.querySelector(".location");
@@ -87,7 +88,10 @@ function displayWeatherData(
   feelsLikeContainer.innerHTML = `Currently Feels Like <div class="feels-like-data">${roundTemperature(feelsLike)}</div>`;
 
   const descriptionContainer = document.querySelector(".description");
-  descriptionContainer.innerHTML = `Tomorrows Forecast <div class="description-data">${description}</div>`;
+  descriptionContainer.innerHTML = `Forecast Description <div class="description-data">${description}</div>`;
+
+  const percipitationContainer = document.querySelector(".precipitation");
+  percipitationContainer.innerHTML = `Precipitation Chance <div class="description-data">${precipitation}%</div>`;
 
   const sunriseContainer = document.querySelector(".sunrise");
   sunriseContainer.innerHTML = `Sunrise <div class="sunrise-data">${formatTime(sunrise)}</div>`;
