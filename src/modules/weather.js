@@ -8,6 +8,7 @@ export default class Weather {
     sunrise,
     sunset,
     description,
+    icon,
   ) {
     this.address = address;
     this.temp = temp;
@@ -17,5 +18,6 @@ export default class Weather {
     this.sunrise = sunrise;
     this.sunset = sunset;
     this.description = description;
+    this.icon = icon;
   }
 }
