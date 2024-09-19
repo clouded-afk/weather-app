@@ -26,6 +26,7 @@ async function getWeather(location) {
     weatherData["currentConditions"].sunset,
     weatherData.description,
     weatherData["currentConditions"].icon,
+    weatherData["days"][0].precipprob,
   );
 
   console.log(locationData);
@@ -39,6 +40,7 @@ async function getWeather(location) {
     locationData.sunrise,
     locationData.sunset,
     locationData.humidity,
+    locationData.precipitation,
     locationData.icon,
   );
 }
