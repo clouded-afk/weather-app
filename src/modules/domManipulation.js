@@ -2,44 +2,44 @@ import { getWeather } from "./apiFunctions";
 
 import clearDay from "../icons/clear-day.png";
 import clearNight from "../icons/clear-night.png";
-import cloudyIcon from "../icons/cloudy.png";
-import fogIcon from "../icons/fog.png";
-import hailIcon from "../icons/hail.png";
+import cloudy from "../icons/cloudy.png";
+import fog from "../icons/fog.png";
+import hail from "../icons/hail.png";
 import partlyCloudyDay from "../icons/partly-cloudy-day.png";
 import partlyCloudyNight from "../icons/partly-cloudy-night.png";
 import rainSnowShowersDay from "../icons/rain-snow-showers-day.png";
 import rainSnowShowersNight from "../icons/rain-snow-showers-night.png";
 import rainSnow from "../icons/rain-snow.png";
-import rainIcon from "../icons/rain.png";
+import rain from "../icons/rain.png";
 import showersDay from "../icons/showers-day.png";
 import showersNight from "../icons/showers-night.png";
-import snowIcon from "../icons/snow.png";
+import snow from "../icons/snow.png";
 import thunderRain from "../icons/thunder-rain.png";
 import thunderShowersDay from "../icons/thunder-showers-day.png";
 import thunderShowersNight from "../icons/thunder-showers-night.png";
-import thunderIcon from "../icons/thunder.png";
-import windIcon from "../icons/wind.png";
+import thunder from "../icons/thunder.png";
+import wind from "../icons/wind.png";
 
 const icons = {
   "clear-day": clearDay,
   "clear-night": clearNight,
-  cloudy: cloudyIcon,
-  fog: fogIcon,
-  hail: hailIcon,
+  cloudy: cloudy,
+  fog: fog,
+  hail: hail,
   "partly-cloudy-day": partlyCloudyDay,
   "partly-cloudy-night": partlyCloudyNight,
   "rain-snow-showers-day": rainSnowShowersDay,
   "rain-snow-showers-night": rainSnowShowersNight,
   "rain-snow": rainSnow,
-  rain: rainIcon,
+  rain: rain,
   "showers-day": showersDay,
   "showers-night": showersNight,
-  snow: snowIcon,
+  snow: snow,
   "thunder-rain": thunderRain,
   "thunder-showers-day": thunderShowersDay,
   "thunder-showers-night": thunderShowersNight,
-  thunder: thunderIcon,
-  wind: windIcon,
+  thunder: thunder,
+  wind: wind,
 };
 
 function selectWeatherIcon(icon) {
