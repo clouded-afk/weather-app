@@ -46,6 +46,14 @@ function selectWeatherIcon(icon) {
   return icons[icon];
 }
 
+function roundTemperature(temp) {
+  return Math.round(temp) + String.fromCharCode(176);
+}
+
+function roundHumidity(humidity) {
+  return Math.round(humidity) + "%";
+}
+
 function displayWeatherData(
   location,
   conditions,
@@ -66,10 +74,10 @@ function displayWeatherData(
   <img src="${selectWeatherIcon(icon)}"></div>`;
 
   const temperatureContainer = document.querySelector(".temperature");
-  temperatureContainer.innerHTML = `Current Temperature <div class="temperature-data">${temp}</div>`;
+  temperatureContainer.innerHTML = `Current Temperature <div class="temperature-data">${roundTemperature(temp)}</div>`;
 
   const feelsLikeContainer = document.querySelector(".feels-like");
-  feelsLikeContainer.innerHTML = `Currently Feels Like <div class="feels-like-data">${feelsLike}</div>`;
+  feelsLikeContainer.innerHTML = `Currently Feels Like <div class="feels-like-data">${roundTemperature(feelsLike)}</div>`;
 
   const descriptionContainer = document.querySelector(".description");
   descriptionContainer.textContent = description;
@@ -81,7 +89,7 @@ function displayWeatherData(
   sunsetContainer.innerHTML = `Sunset <div class="sunset-data">${sunset}</div>`;
 
   const humidityContainer = document.querySelector(".humidity");
-  humidityContainer.innerHTML = `Humidity <div class="feels-like-data">${humidity}</div>`;
+  humidityContainer.innerHTML = `Humidity <div class="feels-like-data">${roundHumidity(humidity)}</div>`;
 }
 
 function changeLocation() {
