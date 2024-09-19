@@ -54,6 +54,13 @@ function roundHumidity(humidity) {
   return Math.round(humidity) + "%";
 }
 
+function formatTime(time) {
+  let [hours, minutes] = time.split(":").map(Number);
+  const period = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12 || 12;
+  return `${hours}:${minutes.toString().padStart(2, "0")} ${period}`;
+}
+
 function displayWeatherData(
   location,
   conditions,
@@ -83,10 +90,10 @@ function displayWeatherData(
   descriptionContainer.textContent = description;
 
   const sunriseContainer = document.querySelector(".sunrise");
-  sunriseContainer.innerHTML = `Sunrise <div class="sunrise-data">${sunrise}</div>`;
+  sunriseContainer.innerHTML = `Sunrise <div class="sunrise-data">${formatTime(sunrise)}</div>`;
 
   const sunsetContainer = document.querySelector(".sunset");
-  sunsetContainer.innerHTML = `Sunset <div class="sunset-data">${sunset}</div>`;
+  sunsetContainer.innerHTML = `Sunset <div class="sunset-data">${formatTime(sunset)}</div>`;
 
   const humidityContainer = document.querySelector(".humidity");
   humidityContainer.innerHTML = `Humidity <div class="feels-like-data">${roundHumidity(humidity)}</div>`;
