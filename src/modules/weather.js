@@ -9,6 +9,7 @@ export default class Weather {
     sunset,
     description,
     icon,
+    precipitation,
   ) {
     this.address = address;
     this.temp = temp;
@@ -19,5 +20,6 @@ export default class Weather {
     this.sunset = sunset;
     this.description = description;
     this.icon = icon;
+    this.precipitation = precipitation;
   }
 }
