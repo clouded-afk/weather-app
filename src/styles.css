@@ -43,9 +43,15 @@ body {
 }
 
 .description {
-  grid-column: 1/4;
+  grid-column: 1/3;
   grid-row: 4/5;
   border: 1px solid red;
+}
+
+.percipitation {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  border: 1px solid yellowgreen;
 }
 
 .sunrise {
