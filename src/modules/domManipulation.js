@@ -87,7 +87,7 @@ function displayWeatherData(
   feelsLikeContainer.innerHTML = `Currently Feels Like <div class="feels-like-data">${roundTemperature(feelsLike)}</div>`;
 
   const descriptionContainer = document.querySelector(".description");
-  descriptionContainer.textContent = description;
+  descriptionContainer.innerHTML = `Tomorrows Forecast <div class="description-data">${description}</div>`;
 
   const sunriseContainer = document.querySelector(".sunrise");
   sunriseContainer.innerHTML = `Sunrise <div class="sunrise-data">${formatTime(sunrise)}</div>`;
@@ -96,7 +96,7 @@ function displayWeatherData(
   sunsetContainer.innerHTML = `Sunset <div class="sunset-data">${formatTime(sunset)}</div>`;
 
   const humidityContainer = document.querySelector(".humidity");
-  humidityContainer.innerHTML = `Humidity <div class="feels-like-data">${roundHumidity(humidity)}</div>`;
+  humidityContainer.innerHTML = `Humidity <div class="humidity-data">${roundHumidity(humidity)}</div>`;
 }
 
 function changeLocation() {
