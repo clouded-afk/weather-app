@@ -1,4 +1,11 @@
 import { getWeather } from "./apiFunctions";
+import {
+  roundTemperature,
+  roundHumidity,
+  convertTemperatureToCelsius,
+  convertTemperatureToFaharenheit,
+  formatTime,
+} from "./conversions";
 
 import clearDay from "../icons/clear-day.png";
 import clearNight from "../icons/clear-night.png";
