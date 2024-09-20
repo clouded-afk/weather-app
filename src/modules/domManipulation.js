@@ -74,10 +74,10 @@ function displayWeatherData(
   <img src="${selectWeatherIcon(icon)}"></div>`;
 
   const temperatureContainer = document.querySelector(".temperature");
-  temperatureContainer.innerHTML = `Current Temperature <div class="temperature-data">${roundTemperature(temp)}</div>`;
+  temperatureContainer.innerHTML = `Current Temperature <div class="temperature-data">${roundTemperature(temp)}&deg;F</div>`;
 
   const feelsLikeContainer = document.querySelector(".feels-like");
-  feelsLikeContainer.innerHTML = `Currently Feels Like <div class="feels-like-data">${roundTemperature(feelsLike)}</div>`;
+  feelsLikeContainer.innerHTML = `Currently Feels Like <div class="feels-like-data">${roundTemperature(feelsLike)}&deg;F</div>`;
 
   const descriptionContainer = document.querySelector(".description");
   descriptionContainer.innerHTML = `Forecast Description <div class="description-data">${description}</div>`;
@@ -101,4 +101,26 @@ function changeLocation() {
   getWeather(location);
 }
 
-export { displayWeatherData, changeLocation };
+function displayTemperatureConversion(temp, feelsLikeTemp) {
+  const feelsLikeData = document.querySelector(".feels-like-data");
+  const temperatureData = document.querySelector(".temperature-data");
+  const tempMeasurement = temp.split(String.fromCharCode(176));
+  const feelsLikeMeasurement = feelsLikeTemp.split(String.fromCharCode(176));
+
+  const temperature = Number(tempMeasurement[0]);
+  const feelsLike = Number(feelsLikeMeasurement[0]);
+
+  if (tempMeasurement[1] === "F") {
+    const convertedCTemp = convertTemperatureToCelsius(temperature);
+    const convertedCFeelsLike = convertTemperatureToCelsius(feelsLike);
+    temperatureData.textContent = convertedCTemp;
+    feelsLikeData.textContent = convertedCFeelsLike;
+  } else if (tempMeasurement[1] === "C") {
+    const convertedFTemp = convertTemperatureToFaharenheit(temperature);
+    const convertedFFeelsLike = convertTemperatureToFaharenheit(feelsLike);
+    temperatureData.textContent = convertedFTemp;
+    feelsLikeData.textContent = convertedFFeelsLike;
+  }
+}
+
+export { displayWeatherData, changeLocation, displayTemperatureConversion };
