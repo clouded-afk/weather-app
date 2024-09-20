@@ -1,5 +1,5 @@
 function roundTemperature(temp) {
-  return Math.round(temp) + String.fromCharCode(176);
+  return (Math.round(temp * 10) / 10).toFixed(1);
 }
 
 function roundHumidity(humidity) {
@@ -14,13 +14,13 @@ function formatTime(time) {
 }
 
 function convertTemperatureToCelsius(temp) {
-  const tempInC = ((temp - 32) * 5) / 9;
-  return roundTemperature(tempInC);
+  const tempInC = (temp - 32) * (5 / 9);
+  return roundTemperature(tempInC) + String.fromCharCode(176) + "C";
 }
 
 function convertTemperatureToFaharenheit(temp) {
   const tempInF = temp * (9 / 5) + 32;
-  return roundTemperature(tempInF);
+  return roundTemperature(tempInF) + String.fromCharCode(176) + "F";
 }
 
 export {
