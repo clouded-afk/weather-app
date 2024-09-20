@@ -22,3 +22,11 @@ function convertTemperatureToFaharenheit(temp) {
   const tempInF = temp * (9 / 5) + 32;
   return roundTemperature(tempInF);
 }
+
+export {
+  roundTemperature,
+  roundHumidity,
+  convertTemperatureToCelsius,
+  convertTemperatureToFaharenheit,
+  formatTime,
+};
