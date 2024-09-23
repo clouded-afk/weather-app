@@ -73,3 +73,18 @@ body {
   grid-row: 5/6;
   border: 1px solid purple;
 }
+
+.forecast-display {
+  width: 800px;
+  height: 200px;
+  display: none;
+  grid-template-columns: repeat(1fr, 7);
+  grid-auto-flow: column;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.day {
+  border: 1px solid red;
+  column-span: 1;
+}
