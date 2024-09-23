@@ -8,6 +8,7 @@ const visualCrossingURL =
 async function getWeather(location) {
   const errorDisplay = document.querySelector(".error-message");
   const weatherDisplay = document.querySelector(".weather-display-container");
+  const sevenDayForecast = document.querySelector(".forecast-display");
   const tempConversionButton = document.querySelector(".convert-temp-button");
 
   try {
@@ -35,6 +36,8 @@ async function getWeather(location) {
       weatherData["days"][0].precipprob,
     );
 
+    locationData.addDays(weatherData["days"]);
+
     console.log(locationData);
 
     displayWeatherData(
@@ -52,10 +55,12 @@ async function getWeather(location) {
 
     errorDisplay.textContent = "";
     weatherDisplay.style.display = "grid";
+    sevenDayForecast.style.display = "grid";
     tempConversionButton.style.display = "block";
   } catch {
     errorDisplay.textContent = "Location Not Found, Try Again!";
     weatherDisplay.style.display = "none";
+    sevenDayForecast.style.display = "none";
     tempConversionButton.style.display = "none";
   }
 }
