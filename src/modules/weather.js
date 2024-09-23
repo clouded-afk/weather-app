@@ -21,5 +21,10 @@ export default class Weather {
     this.description = description;
     this.icon = icon;
     this.precipitation = precipitation;
+    this.days = [];
+  }
+
+  addDays(daysArray) {
+    this.days.push(daysArray);
   }
 }
