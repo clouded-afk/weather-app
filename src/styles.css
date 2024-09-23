@@ -13,9 +13,13 @@ body {
   width: 500px;
   border: 1px solid black;
   margin: auto;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(1fr, 3);
   grid-template-rows: repeat(1fr, 5);
+}
+
+.convert-temp-button {
+  display: none;
 }
 
 .location {
