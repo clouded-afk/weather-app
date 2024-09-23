@@ -1,5 +1,5 @@
 import Weather from "./weather";
-import { displayWeatherData } from "./domManipulation";
+import { displayForecastData, displayWeatherData } from "./domManipulation";
 
 const apiKey = "NXLP6YADTTMR3FKA8W7FMBJQP";
 const visualCrossingURL =
@@ -36,7 +36,7 @@ async function getWeather(location) {
       weatherData["days"][0].precipprob,
     );
 
-    locationData.addDays(weatherData["days"]);
+    locationData.addDays(weatherData["days"].slice(1));
 
     console.log(locationData);
 
@@ -51,6 +51,19 @@ async function getWeather(location) {
       locationData.humidity,
       locationData.precipitation,
       locationData.icon,
+    );
+
+    const days = locationData.days[0];
+    const forecastDates = days.map((day) => day.datetime);
+    const forecastConditions = days.map((day) => day.conditions);
+    const forecastIcons = days.map((day) => day.icon);
+    const forecastTemps = days.map((day) => day.temp);
+
+    displayForecastData(
+      forecastDates,
+      forecastConditions,
+      forecastIcons,
+      forecastTemps,
     );
 
     errorDisplay.textContent = "";
