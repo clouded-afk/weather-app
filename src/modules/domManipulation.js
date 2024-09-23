@@ -95,6 +95,34 @@ function displayWeatherData(
   humidityContainer.innerHTML = `Humidity <div class="humidity-data">${roundHumidity(humidity)}</div>`;
 }
 
+function displayForecastData(
+  forecastDate,
+  forecastConditions,
+  forecastIcon,
+  forecastTemp,
+) {
+  const dayDate = document.querySelectorAll(".day-date");
+  const dayConditions = document.querySelectorAll(".day-conditions");
+  const dayIcons = document.querySelectorAll(".day-icon");
+  const dayTemperature = document.querySelectorAll(".day-temp");
+
+  dayDate.forEach((date, index) => {
+    date.textContent = forecastDate[index];
+  });
+
+  dayConditions.forEach((conditions, index) => {
+    conditions.textContent = forecastConditions[index];
+  });
+
+  dayIcons.forEach((icon, index) => {
+    icon.innerHTML = `<img src="${selectWeatherIcon(forecastIcon[index])}"></div>`;
+  });
+
+  dayTemperature.forEach((temp, index) => {
+    temp.textContent = forecastTemp[index];
+  });
+}
+
 function changeLocation() {
   const location = document.getElementById("search-bar").value;
 
@@ -123,4 +151,9 @@ function displayTemperatureConversion(temp, feelsLikeTemp) {
   }
 }
 
-export { displayWeatherData, changeLocation, displayTemperatureConversion };
+export {
+  displayWeatherData,
+  displayForecastData,
+  changeLocation,
+  displayTemperatureConversion,
+};
