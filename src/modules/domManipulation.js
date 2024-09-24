@@ -120,7 +120,7 @@ function displayForecastData(
   });
 
   dayTemperature.forEach((temp, index) => {
-    temp.textContent = forecastTemp[index];
+    temp.textContent = forecastTemp[index] + String.fromCharCode(176) + "F";
   });
 }
 
@@ -150,6 +150,25 @@ function displayTemperatureConversion(temp, feelsLikeTemp) {
     temperatureData.textContent = convertedFTemp;
     feelsLikeData.textContent = convertedFFeelsLike;
   }
+
+  displayForecastTempConversion();
+}
+
+function displayForecastTempConversion() {
+  const forecastedTemperatures = document.querySelectorAll(".day-temp");
+
+  forecastedTemperatures.forEach((temp) => {
+    const tempMeasurement = temp.textContent.split(String.fromCharCode(176));
+    const temperature = Number(tempMeasurement[0]);
+
+    if (tempMeasurement[1] === "F") {
+      const convertedCTemp = convertTemperatureToCelsius(temperature);
+      temp.textContent = convertedCTemp;
+    } else if (tempMeasurement[1] === "C") {
+      const convertedFTemp = convertTemperatureToFaharenheit(temperature);
+      temp.textContent = convertedFTemp;
+    }
+  });
 }
 
 export {
