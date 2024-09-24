@@ -22,9 +22,14 @@ export default class Weather {
     this.icon = icon;
     this.precipitation = precipitation;
     this.days = [];
+    this.today = [];
   }
 
   addDays(daysArray) {
     this.days.push(daysArray);
+  }
+
+  addToday(hoursArray) {
+    this.today.push(hoursArray);
   }
 }
