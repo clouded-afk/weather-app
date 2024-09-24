@@ -120,8 +120,18 @@ function displayForecastData(
   });
 
   dayTemperature.forEach((temp, index) => {
-    temp.textContent = forecastTemp[index] + String.fromCharCode(176) + "F";
+    temp.textContent =
+      roundTemperature(forecastTemp[index]) + String.fromCharCode(176) + "F";
   });
+}
+
+function displayHourlyData(hourlyTime, hourlyIcon, hourlyTemp) {
+  const currentTime = new Date().getTime();
+  const sixHoursLater = new Date(currentTime + 6 * 60 * 60 * 1000).getTime();
+
+  const hourTime = document.querySelectorAll(".hour-time");
+  const hourIcon = document.querySelectorAll(".hour-icon");
+  const hourTemp = document.querySelectorAll(".hour-temp");
 }
 
 function changeLocation() {
@@ -176,4 +186,5 @@ export {
   displayForecastData,
   changeLocation,
   displayTemperatureConversion,
+  displayHourlyData,
 };
