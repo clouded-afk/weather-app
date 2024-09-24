@@ -5,6 +5,7 @@ import {
   convertTemperatureToCelsius,
   convertTemperatureToFaharenheit,
   formatTime,
+  formatDate,
 } from "./conversions";
 
 import clearDay from "../icons/clear-day.png";
@@ -107,7 +108,7 @@ function displayForecastData(
   const dayTemperature = document.querySelectorAll(".day-temp");
 
   dayDate.forEach((date, index) => {
-    date.textContent = forecastDate[index];
+    date.textContent = formatDate(forecastDate[index]);
   });
 
   dayConditions.forEach((conditions, index) => {
