@@ -116,7 +116,7 @@ function displayForecastData(
   });
 
   dayIcons.forEach((icon, index) => {
-    icon.innerHTML = `<img src="${selectWeatherIcon(forecastIcon[index])}"></div>`;
+    icon.innerHTML = `<img src="${selectWeatherIcon(forecastIcon[index])}">`;
   });
 
   dayTemperature.forEach((temp, index) => {
@@ -126,12 +126,22 @@ function displayForecastData(
 }
 
 function displayHourlyData(hourlyTime, hourlyIcon, hourlyTemp) {
-  const currentTime = new Date().getTime();
-  const sixHoursLater = new Date(currentTime + 6 * 60 * 60 * 1000).getTime();
-
   const hourTime = document.querySelectorAll(".hour-time");
   const hourIcon = document.querySelectorAll(".hour-icon");
   const hourTemp = document.querySelectorAll(".hour-temp");
+
+  hourlyTime.forEach((time, index) => {
+    if (index >= 6 && (index - 6) % 3 === 0) {
+      const hourIndex = (index - 6) / 3;
+      hourTime[hourIndex].textContent = formatTime(time);
+      hourIcon[hourIndex].innerHTML =
+        `<img src="${selectWeatherIcon(hourlyIcon[index])}">`;
+      hourTemp[hourIndex].textContent =
+        `${roundTemperature(hourlyTemp[index])}` +
+        String.fromCharCode(176) +
+        "F";
+    }
+  });
 }
 
 function changeLocation() {
