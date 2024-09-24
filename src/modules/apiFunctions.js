@@ -1,5 +1,9 @@
 import Weather from "./weather";
-import { displayForecastData, displayWeatherData } from "./domManipulation";
+import {
+  displayForecastData,
+  displayWeatherData,
+  displayHourlyData,
+} from "./domManipulation";
 
 const apiKey = "NXLP6YADTTMR3FKA8W7FMBJQP";
 const visualCrossingURL =
@@ -37,6 +41,7 @@ async function getWeather(location) {
     );
 
     locationData.addDays(weatherData["days"].slice(1));
+    locationData.addToday(weatherData["days"][0]["hours"]);
 
     console.log(locationData);
 
@@ -65,6 +70,13 @@ async function getWeather(location) {
       forecastIcons,
       forecastTemps,
     );
+
+    const hourlyForecast = locationData.today[0];
+    const hourlyTimes = hourlyForecast.map((today) => today.datetimeEpoch);
+    const hourlyIcons = hourlyForecast.map((today) => today.icon);
+    const hourlyTemps = hourlyForecast.map((today) => today.temp);
+
+    displayHourlyData(hourlyTimes, hourlyIcons, hourlyTemps);
 
     errorDisplay.textContent = "";
     weatherDisplay.style.display = "grid";
