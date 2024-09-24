@@ -23,10 +23,16 @@ function convertTemperatureToFaharenheit(temp) {
   return roundTemperature(tempInF) + String.fromCharCode(176) + "F";
 }
 
+function formatDate(date) {
+  let [year, month, day] = date.split("-").map(Number);
+  return `${month}/${day}`;
+}
+
 export {
   roundTemperature,
   roundHumidity,
   convertTemperatureToCelsius,
   convertTemperatureToFaharenheit,
   formatTime,
+  formatDate,
 };
