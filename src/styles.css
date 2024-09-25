@@ -1,3 +1,8 @@
+:root {
+  --shadow-color: #a3a3a3;
+  --accent-color: #93c5fd;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,20 +15,54 @@ body {
 
 .weather-display {
   display: flex;
-  width: 800px;
+  width: 100vw;
   align-items: center;
   justify-content: center;
   margin: auto;
 }
 
 .weather-display-container {
-  height: 500px;
-  width: 500px;
-  border: 1px solid black;
+  height: 700px;
+  width: 700px;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px var(--shadow-color);
   margin: auto;
   display: none;
+  gap: 20px;
+  padding: 20px;
   grid-template-columns: repeat(1fr, 3);
   grid-template-rows: repeat(1fr, 5);
+}
+
+.weather-display-container > * {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px var(--shadow-color);
+  margin-top: 0;
+  position: relative;
+}
+
+.location-header,
+.conditions-header,
+.temp-header,
+.feels-like-header,
+.description-header,
+.precipitation-header,
+.sunrise-header,
+.sunset-header,
+.humidity-header {
+  position: absolute;
+  top: 0;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
 }
 
 .convert-temp-button {
@@ -33,53 +72,68 @@ body {
 .location {
   grid-column: 1/4;
   grid-row: 1/2;
-  border: 1px solid red;
+}
+
+.location-data,
+.conditions-data,
+.temperature-data,
+.feels-like-data,
+.precipitation-data,
+.humidity-data,
+.sunrise-data,
+.sunset-data {
+  font-size: 22px;
+  margin-top: 20px;
 }
 
 .conditions {
   grid-column: 1/3;
   grid-row: 2/4;
-  border: 1px solid blue;
+}
+
+.weather-icon {
+  height: 100px;
+  width: 100px;
+}
+
+.conditions-data {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
 }
 
 .temperature {
   grid-column: 3/4;
   grid-row: 2/3;
-  border: 1px solid green;
 }
 
 .feels-like {
   grid-column: 3/4;
   grid-row: 3/4;
-  border: 1px solid orange;
 }
 
 .description {
   grid-column: 1/3;
   grid-row: 4/5;
-  border: 1px solid red;
 }
 
-.percipitation {
+.precipitation {
   grid-column: 3/4;
   grid-row: 4/5;
-  border: 1px solid yellowgreen;
 }
 
 .sunrise {
   grid-column: 1/2;
   grid-row: 5/6;
-  border: 1px solid purple;
 }
 .sunset {
   grid-column: 2/3;
   grid-row: 5/6;
-  border: 1px solid purple;
 }
 .humidity {
   grid-column: 3/4;
   grid-row: 5/6;
-  border: 1px solid purple;
 }
 
 .forecast-display {
