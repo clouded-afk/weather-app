@@ -72,19 +72,19 @@ function displayWeatherData(
   const conditionsContainer = document.querySelector(".conditions");
   conditionsContainer.innerHTML = `<div class="conditions-header">Current Conditions</div><div class="conditions-data">
   ${conditions}
-  <img src="${selectWeatherIcon(icon)}"></div>`;
+  <img src="${selectWeatherIcon(icon)}" class="weather-icon"></div>`;
 
   const temperatureContainer = document.querySelector(".temperature");
-  temperatureContainer.innerHTML = `<div class="temp-header">Current Temperature</div><div class="temperature-data">${roundTemperature(temp)}&deg;F</div>`;
+  temperatureContainer.innerHTML = `<div class="temp-header">Temperature</div><div class="temperature-data">${roundTemperature(temp)}&deg;F</div>`;
 
   const feelsLikeContainer = document.querySelector(".feels-like");
-  feelsLikeContainer.innerHTML = `<div class="feels-like-header">Currently Feels Like</div><div class="feels-like-data">${roundTemperature(feelsLike)}&deg;F</div>`;
+  feelsLikeContainer.innerHTML = `<div class="feels-like-header">Feels Like</div><div class="feels-like-data">${roundTemperature(feelsLike)}&deg;F</div>`;
 
   const descriptionContainer = document.querySelector(".description");
   descriptionContainer.innerHTML = `<div class="description-header">Forecast Description</div><div class="description-data">${description}</div>`;
 
   const percipitationContainer = document.querySelector(".precipitation");
-  percipitationContainer.innerHTML = `<div class="precipitation-header">Precipitation Chance</div><div class="description-data">${precipitation}%</div>`;
+  percipitationContainer.innerHTML = `<div class="precipitation-header">Precipitation Chance</div><div class="precipitation-data">${precipitation}%</div>`;
 
   const sunriseContainer = document.querySelector(".sunrise");
   sunriseContainer.innerHTML = `<div class="sunrise-header">Sunrise</div><div class="sunrise-data">${formatTime(sunrise)}</div>`;
