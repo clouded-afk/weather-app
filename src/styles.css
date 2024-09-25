@@ -13,12 +13,18 @@ body {
   width: 100vw;
 }
 
+.all-data {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  gap: 20px;
+}
+
 .weather-display {
-  display: flex;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  width: 920px;
+  grid-template-columns: 2fr 1fr;
   margin: auto;
+  gap: 20px;
 }
 
 .weather-display-container {
@@ -27,7 +33,6 @@ body {
   background-color: var(--accent-color);
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px var(--shadow-color);
-  margin: auto;
   display: none;
   gap: 20px;
   padding: 20px;
@@ -137,18 +142,17 @@ body {
 }
 
 .forecast-display {
-  width: 800px;
   height: 200px;
+  width: 920px;
+  margin: auto;
   display: none;
   grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
-  margin: auto;
-  margin-top: 200px;
+  grid-row: 2/3;
   border: 1px solid black;
 }
 
 .day {
-  border: 1px solid red;
   column-span: 1;
 }
 
