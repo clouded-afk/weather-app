@@ -142,15 +142,46 @@ body {
 }
 
 .hourly-display {
+  background-color: var(--accent-color);
   display: none;
   height: 700px;
   width: 200px;
-  grid-template-rows: repeat(1fr, 6);
-  border: 1px solid black;
+  padding: 20px;
+  grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px var(--shadow-color);
 }
 
 .hour {
-  border: 1px solid red;
+  position: relative;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px var(--shadow-color);
+}
+
+.hour-time {
+  position: absolute;
+  top: 0;
+  padding-top: 5px;
+}
+
+.hour-information {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.hour-icon {
+  padding: 10px;
+}
+
+.hour-temp {
+  padding: 10px;
 }
 
 .forecast-display {
