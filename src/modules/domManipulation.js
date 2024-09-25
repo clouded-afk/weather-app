@@ -171,13 +171,28 @@ function displayTemperatureConversion(temp, feelsLikeTemp) {
     feelsLikeData.textContent = convertedFFeelsLike;
   }
 
-  displayForecastTempConversion();
+  displayOtherTempConversion();
 }
 
-function displayForecastTempConversion() {
+function displayOtherTempConversion() {
   const forecastedTemperatures = document.querySelectorAll(".day-temp");
 
   forecastedTemperatures.forEach((temp) => {
+    const tempMeasurement = temp.textContent.split(String.fromCharCode(176));
+    const temperature = Number(tempMeasurement[0]);
+
+    if (tempMeasurement[1] === "F") {
+      const convertedCTemp = convertTemperatureToCelsius(temperature);
+      temp.textContent = convertedCTemp;
+    } else if (tempMeasurement[1] === "C") {
+      const convertedFTemp = convertTemperatureToFaharenheit(temperature);
+      temp.textContent = convertedFTemp;
+    }
+  });
+
+  const hourlyTemperatures = document.querySelectorAll(".hour-temp");
+
+  hourlyTemperatures.forEach((temp) => {
     const tempMeasurement = temp.textContent.split(String.fromCharCode(176));
     const temperature = Number(tempMeasurement[0]);
 
