@@ -67,7 +67,7 @@ function displayWeatherData(
   icon,
 ) {
   const locationContainer = document.querySelector(".location");
-  locationContainer.innerHTML = `Location <div class="localation-data">${location}</div>`;
+  locationContainer.innerHTML = `<div class="location-header">Location</div><div class="location-data">${location}</div>`;
 
   const conditionsContainer = document.querySelector(".conditions");
   conditionsContainer.innerHTML = `Current Conditions <div class="conditions-data">
