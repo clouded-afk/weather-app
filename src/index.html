@@ -14,10 +14,18 @@
   <body>
     <div class="main-container">
       <div class="search-bar-container">
-        <input type="text" id="search-bar" />
-        <button class="search-button">Search</button>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Enter a City, State, or Country...."
+          />
+          <button class="search-button">Search</button>
+        </div>
+        <div class="error-container">
+          <div class="error-message"></div>
+        </div>
       </div>
-      <div class="error-message"></div>
       <div class="all-data">
         <div class="weather-display">
           <div class="weather-display-container">
