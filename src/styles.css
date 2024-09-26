@@ -16,7 +16,7 @@ body {
 }
 
 .all-data {
-  display: grid;
+  display: none;
   grid-template-rows: 3fr 1fr;
   gap: 20px;
 }
@@ -35,7 +35,7 @@ body {
   background-color: var(--accent-color);
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px var(--shadow-color);
-  display: none;
+  display: grid;
   gap: 20px;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
@@ -71,10 +71,6 @@ body {
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-}
-
-.convert-temp-button {
-  display: none;
 }
 
 .location {
@@ -126,6 +122,10 @@ body {
   grid-row: 4/5;
 }
 
+.description-data {
+  text-align: center;
+}
+
 .precipitation {
   grid-column: 3/4;
   grid-row: 4/5;
@@ -146,7 +146,7 @@ body {
 
 .hourly-display {
   background-color: var(--accent-color);
-  display: none;
+  display: grid;
   height: 700px;
   width: 200px;
   padding: 20px;
@@ -192,7 +192,7 @@ body {
   height: 200px;
   width: 920px;
   margin: auto;
-  display: none;
+  display: grid;
   gap: 20px;
   padding: 20px;
   background-color: var(--accent-color);
@@ -225,7 +225,7 @@ body {
 .day-conditions {
   text-align: center;
   padding: 5px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .day-temp {
@@ -233,4 +233,8 @@ body {
   font-size: 18px;
   bottom: 0;
   padding-bottom: 10px;
+}
+
+.convert-temp-button {
+  display: none;
 }
