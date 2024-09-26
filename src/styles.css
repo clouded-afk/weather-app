@@ -6,11 +6,13 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 body {
   height: 100vh;
   width: 100vw;
+  background-color: bisque;
 }
 
 .all-data {
@@ -36,7 +38,7 @@ body {
   display: none;
   gap: 20px;
   padding: 20px;
-  grid-template-columns: repeat(1fr, 3);
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   grid-template-rows: repeat(1fr, 5);
 }
 
