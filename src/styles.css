@@ -237,4 +237,21 @@ body {
 
 .convert-temp-button {
   display: none;
+  margin: auto;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #065f46;
+  font-weight: bold;
+  color: white;
+  border: #065f46;
+  cursor: pointer;
+}
+
+.convert-temp-button:hover {
+  background-color: #047857;
+}
+
+.convert-temp-button:active {
+  background-color: #059669;
 }
