@@ -24,8 +24,6 @@ async function getWeather(location) {
 
     const weatherData = await response.json();
 
-    console.log(weatherData);
-
     const locationData = new Weather(
       weatherData.resolvedAddress,
       weatherData["currentConditions"].temp,
@@ -41,8 +39,6 @@ async function getWeather(location) {
 
     locationData.addDays(weatherData["days"].slice(1));
     locationData.addToday(weatherData["days"][0]["hours"]);
-
-    console.log(locationData);
 
     displayWeatherData(
       locationData.address,
